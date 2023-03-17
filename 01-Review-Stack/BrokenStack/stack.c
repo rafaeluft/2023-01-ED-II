@@ -22,8 +22,11 @@ struct Stack* Stack_create(){
 }
 
 bool Stack_push(struct Stack* stack, int data){
-    if(stack->qty+1 < MAX){
-        stack->data[stack->qty++] = data;
+    if(stack->qty < MAX){
+        //começar as inserir os dados a partir do índice 1
+        stack->qty++;
+        //inserir os dados até o índice 10 (stack->qty==10) 
+        stack->data[stack->qty] = data;
         return true;
     }
     return false;
